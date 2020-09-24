@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>폼 태그 전체 연습</title>
+</head>
+<body>
+    <h2>폼 태그 전체 연습</h2>
+    <hr>
+    <form name="info_form" action="#" method="GET">
+        <fieldset>
+            <legend>개인 정보</legend>
+            <label for="userId">사용자 ID :  </label>
+            <input id="userID" type="text" size="15" value="" placeholder="id"><p>
+            <label for="pwd">비밀번호 : </label>
+            <input id="pwd" type="password" size="15" value="" placeholder="password"><p>
+            
+            email : <input name="email" type="email" placeholder="example@email.com"><p>
+            홈페이지 : <input name="homepage" type="url" placeholder="https://google.com"><p>
+            전화번호 : <input name="phonenumber" type="tel" placeholder="010-XXXX-XXXX"><p>
+            국적(input-datalist) : <input name="countries" type="text" list="countries"><p>
+            <datalist id="countries">
+                <option value="가나">
+                <option value="스위스">
+                <option value="브라질">
+            </datalist>
+        </fieldset>
+        <br>
+    
+
+        <fieldset>
+            <legend>메뉴 선택</legend>
+            <label>메뉴 검색 : <input type="search" placeholder="메뉴 이름"></label><p>
+            <label>메뉴(select)
+                <select name="menu" size="1">
+                    <option value="1">짜장면</option>
+                    <option value="2" selected>짬뽕</option>
+                    <option value="3">탕수육</option>
+                </select>
+            </label><p>
+
+            <label><input type="checkbox" name="jajjang" value="1">짜장면<img src="picture/jajjang.png" width="100px"></label>
+            <label><input type="checkbox" name="jjambbong" value="2">짬뽕<img src="picture/jjambbong.png" width="100px"></label>
+            <label><input type="checkbox" name="tangsuyuk" value="3">탕수육<img src="picture/tangsuyook.jpg" width="100px"></label><p>
+
+            <label><input type="radio" name="chineseFood" value="2" checked>짬뽕<img src="picture/jjambbong.png" width="100px"></label>
+            <label><input type="radio" name="chineseFood" value="1">짜장면<img src="picture/jajjang.png" width="100px"></label>
+            <label><input type="radio" name="chineseFood" value="3">탕수육<img src="picture/tangsuyook.jpg" width="100px"></label><br><br>
+
+
+        배달일 : <input type="date" value="2020-09-24"><p>
+        배달시간 : <input type="time" value="12:00"><p>
+        기타 요구사항: <textarea rows="5" cols="80" wrap="SOFT">기타 요구사항을 쓰세요.</textarea>
+    </fieldset>
+
+    <fieldset>
+        <legend>환경 설정</legend>
+        글자색 선택 <input type="color" value="#00BFFF" onchange="document.body.style.color=this.value"><p>
+        배경색 선택 <input type="color" value="#00BFFF" onchange="document.body.style.background=this.value"><p>
+        웹프로그래밍 학습시간 (0.0-10.0시간) : <input type="number" name="duration" min="0.0" max="10.0" step="0.5"><p>
+        적정 학습 온도 : 10&deg; <input type="range" min="10" max="30"> 30&deg;
+    </fieldset><p>
+        <input type="reset" value="취소">
+        <input type="submit" value="완료">
+    </form>
+</body>
+</html>
