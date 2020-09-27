@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Making Selector</title>
+        <meta name="author" content="Sunghoon Jung">
+        <style>
+            h3, li {
+                color: #db6b6b;
+            }
+            .warning {
+                color: #7e2222;
+            }
+            body.main {
+                background-color: #000000;
+            }
+            .whiteFont {
+                color: white;
+            }
+            /* id selector */
+            #list {
+                background: #FFFFFF;
+            }
+            p#test, hr#test {
+                background-color: mistyrose;
+            }
+            ul strong {
+                color: olive;
+            }
+            div > strong {
+                color: red;
+            }
+            * {
+                /* 전체 셀렉터 */
+            }
+            input[type=text] {
+                color: red;
+            }
+        </style>
+    </head>
+    <body class="main">
+        <h3>Web Programming</h3>
+        <hr id="test">
+        <div>
+            <div class="whiteFont">2학기 <strong>학습내용</strong></div>
+            <ul id="list">
+                <li>HTML5</li>
+                <li>CSS</li>
+                <li>JAVASCRIPT</li>
+            </ul>
+            <div class="warning">60점 이하는 F!</div>
+        </div>
+        <hr id="test">
+        <p id="test">
+            오우야 ㅋㅋ.
+        </p>
+        <hr id="test">
+
+    </body>
+</html>
