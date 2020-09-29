@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>정성훈/60191686/기초웹프로그래밍 과제 #2</title>
+        <meta name="keywords" content="CSS, html">
+        <meta name="author" content="Sunghoon Jung">
+        <meta charset="UTF-8">
+        <style>
+            /* @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css); */
+            * {
+                font-family: 'Times New Roman', '돋음';
+            }
+            body {
+                margin-left: 10px;
+                margin-right: 10px;
+                padding: 0;
+                height: 100%;
+                background-color: white;
+            }
+            #header {
+                width: 30%;
+                height: 20%;
+                background-color: #508164;
+                margin-left: 35%;
+                margin-right: 35%;
+            }
+            h1 {
+                text-align: center;
+                font-size: 35px;
+                color: white;
+            }
+            #nav {
+                background-color: #F7F3F3;
+            }
+            nav > h3 {
+                font-size: 25px;
+                color: #44564A;
+                padding-left: 15px;
+            }
+            ul > li {
+                font-size: 18px;
+                color: #8E6D6E;
+                background-color: #EBE2DE;
+                margin-right: 93%;
+            }
+            ul > li:hover {
+                font-weight: bold;
+            }
+            #section {
+                background-color: whitesmoke;
+            }
+            p {
+                margin-right: 35px;
+                color: white;
+            }
+            .p1 {
+                background-color: #C0A4B4;
+            }
+            .p2 {
+                background-color: #9D5679;
+            }
+            .p3 {
+                background-color: #3C3555;
+            }
+            ol > li > h3 {
+                font-size: 20px;
+            }
+            p:first-letter {
+                font-size: 25px;
+                font-weight: bold;
+                padding-left: 20px;
+            }
+            span:hover {
+                color: #8d2424;
+            }
+            .important-words {
+                font-weight: bold;
+                font-style: italic;
+                color: black;
+            }
+            hr {
+                height: 5px;
+                background-color: #312E41;
+                border-width: 0px;
+            }
+            a {
+                font-family: Impact, 'Arial Narrow Bold', sans-serif;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <header id="header">
+            <h1>퍼셉트론</h1>
+        </header>
+        <hr>
+        <nav id="nav">
+            <h3>목차</h3>
+            <ul>
+                <li>구조</li><br>
+                <li>동작</li><br>
+                <li>학습</li>
+            </ul>
+        </nav>
+        <hr>
+        <section id="section">
+            <ol type="I">
+                <li><h3>구조</h3></li>
+                <p class="p1">
+                    퍼셉트론의 구조는 아주 단순하다. 입력층과 출력층이라 부르는 2개의 층이 있는데, 입력층은 아무런 연산을 하지 않으므로 층의 개수를 셀 때 제외한다.<br>
+                    따라서 퍼셉트론은 1개의 층이 있다고 말한다. 층을 구성하는 노드는 원으로 표시하며, 입력층에 있는 입력 노드 하나는 특징 벡터의 특징 하나에 해당한다.<br> 
+                </p>
+                <li><h3>동작</h3></li>
+                <p class="p2">
+                    퍼셉트론의 동작은 단순하다. 입력층에 특징 벡터 x=(x1, x2, ..., xd)<sup>T</sup>가 들어오면, 서로 연결된 특징값과 가중치를 곱한 결과를 모두 더한다.<br>
+                    이렇게 얻은 값 s를 <span class="important-words">활성화함수</span>(activation function)에 입력으로 넣고 계산한다. 활성함수의 출력이 퍼셉트론의 최종 출력이 된다.<br>
+                </p>
+                <li><h3>학습</h3></li>
+                <p class="p3">
+                    학습은 <span class="important-words">목적함수</span> 설계와 델타 규칙 유도로 이루어진다. 목적함수를 가중치 갱신 규칙에 적용하면 된다. 그리고 목적함수를 편미분하여 그레디언트를 구한다.<br>
+                    구한 그레디언트를 가중치 갱신 규칙에 대입하면 학습을 위한 식이 만들어진다. 보통 퍼셉트론 학습 규칙으로서 <span class="important-words">델타 규칙</span>이라고 말한다.<br>
+                </p>
+            </ol>
+        </section>
+        <hr>
+        <footer>
+            자세한 내용은 <a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B4606522972">MACHINE LEARNING <b>기계학습</b></a> 책을 참고하십시오
+        </footer>
+    </body>
+</html>

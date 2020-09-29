@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>20200929_2.html</title>
+        <style>
+            p.tom {
+                width: 300px;
+                height: 300px;
+                background-color: #5ba573;
+                background-image: url("picture/tom_and_jerry.png");
+                background-size: 250px 250px;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+            div.tom {
+                width: 300px;
+                height: 300px;
+                background: #3b79c9 url("picture/tom_and_jerry.png") center center/100px 100px repeat-y;
+            }
+            div.shadow {
+                text-shadow: 3px 3px 2px #e94040;
+            }
+            div.shadow2 {
+                text-shadow: 0px 0px 10px #ffee00;
+            }
+            div.shadow3 {
+                text-shadow: 0px 0px 3px #e94040,
+                             0px 0px 3px #3b79c9;
+            }
+            div.box {
+                box-shadow: 5px 5px 3px #5ba573;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Background-image</h1>
+        <hr>
+        <p class="tom">
+        </p>
+        <div class="tom">
+        </div>
+        <h1>Text-shadow</h1>
+        <hr>
+        <div class="shadow">
+            Drop Shadow
+        </div>
+        <div class="shadow2">
+            Glow Effect
+        </div>
+        <div class="shadow3">
+            Multiple Shadow Effect
+        </div>
+        <h1>Box-shadow</h1>
+        <hr>
+        <div class="box">
+            hi
+        </div>
+    </body>
+</html>
