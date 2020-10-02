@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>20201002_1.html</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="">
+        <style>
+            div {
+                background: #bce2fb;
+                border: 2px solid red;
+            }
+            span {
+                border: 3px dotted yellow;
+                background: whitesmoke;
+            }
+            div.text-card {
+                display: inline-block;
+                height: 50px;
+                width: 50px;
+                border: 1px solid #d35656;
+                text-align: center;
+                color: white;
+            }
+            #down:hover {
+                position: relative;
+                left: 20px;
+                top: 20px;
+                background: rgb(50, 129, 61);
+            }
+            #up:hover {
+                position: relative;
+                right: 20px;
+                bottom: 20px;
+                background: rgb(50, 129, 61);
+            }
+            div.absolute {
+                display: inline-block;
+                position: absolute;
+            }
+            div > p {
+                display: inline-block;
+                position: absolute;
+                height: 20px;
+                width: 35px;
+                background: whitesmoke;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>인라인, 인라인 블록, 블록</h1>
+        <hr>
+        <div>
+            나는 <div style="display: none;">div(none)</div>입니다.<br><br>
+            나는 <div style="display: inline;">div(inline)입니다.</div><br><br>
+            나는 <div style="display: inline-block;">
+            div(inline-block)</div>입니다.<br><br>
+            나는 <div>div<span style="display:block;">span(block)</span>입니다.</div>
+        </div>
+        <hr>
+        <h1>박스의 배치 Position</h1>
+        상대배치 : 기본 위치에서부터 상대 위치<br>
+        position: relative; left: 20px; top: 20px;<br>
+        <hr>
+        <div class="text-card">T</div>
+        <div class="text-card" id="down">H</div>
+        <div class="text-card">A</div>
+        <div class="text-card">N</div>
+        <div class="text-card" id="up">K</div>
+        <div class="text-card">S</div>
+        <hr>
+        <div class="absolute">
+            <img src="picture/tom_and_jerry.png" width="200px" height="200px" alt=" 크리스마스 트리">
+            <p style="left: 30px; top: 60px;">TOM</p>
+            <p style="left: 140px; top: 160px;">Jerry</p>
+        </div>
+        <hr>
+        <h1>Postion: fixed</h1>
+        <hr>
+        
+    </body>
+</html>
