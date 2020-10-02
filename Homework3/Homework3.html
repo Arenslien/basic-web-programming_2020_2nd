@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>정성훈/60191686/기초웹프로그래밍 과제#3</title>
+        <meta name="Author" content="정성훈">
+        <meta charset="UTF-8">
+        <style>
+            header {
+                background: #508164;
+                margin: -8px -8px 0px -8px;
+            }
+            h1.title {
+                text-align: left;
+                font-size: 25px;
+                padding: 5px 5px 10px 15px;
+                text-shadow: #0d2510 0px 0px 10px;
+                margin: 0px
+            }
+            a {
+                text-decoration: none;
+            }
+            h1.title > a {
+                color: white;
+            }
+            nav {
+                background: #EBE2DE;
+                margin: 0px -8px 0px -8px;
+                border: yellow solid 0px;
+                padding: 0px 0px 0px 0px;
+            }
+            nav ul {
+                margin: 0px;
+                padding: 0px 20px;
+                list-style-type: none;
+                width: 639px;
+            }
+            nav ul li {
+                display: inline-block;
+                font-weight: bold;
+                width: 100px;
+                text-align: center;
+                padding: 0px 4%;
+            }
+            nav a:hover {
+                color: #523637;
+            }
+            nav a {
+                color: #8E6D6E;
+            }
+            h2.subtitle {
+                display: inline-block;
+                color: #44564A;
+                margin-left: 30px;
+                margin-bottom: 10px;
+                text-shadow: silver 3px 3px 5px;
+            }
+            div.near-h2 {
+                display:inline-block;
+                position: absolute;
+                width: 80px;
+                height: 80px;
+                margin-left: 20px;
+            }
+            div.card-box {
+                width: 20px;
+                height: 20px;
+                position: absolute;
+            }
+            #card1 {
+                z-index: 1;
+            }
+            #card2 {
+                z-index: 2;
+            }
+            #card3 {
+                z-index: 3;
+            }
+            #card4 {
+                z-index: 4;
+            }
+            #card5 {
+                z-index: 5;
+            }
+            div.big-box {
+                position: relative;
+                width: 550px;
+                height: 350px;
+                background: #F7F3F3;
+                border: #8E6D6E double 5px;
+                border-radius: 10px;
+                margin: 25px;
+                box-shadow: silver 3px 3px 5px;
+            }
+            div.small-box {
+                position: absolute;
+                display: inline-block;
+                width: 150px;
+                height: 150px;
+                background: #EBE2DE;
+                border: #E5C7B7 solid 1px;
+                word-wrap: break-word;
+            }
+            div.plus-box {
+                position: absolute;
+                display: inline-block;
+                width: 150px;
+                height: 150px;
+                background: #EBE2DE url("img/add-plus-button.png") center center/70px no-repeat;
+                border: #E5C7B7 solid 1px;
+                word-wrap: break-word;
+            }
+            div.up {
+                position:fixed;
+                bottom: 10px;
+                right: 10px;
+                width: 50px;
+                height: 50px;
+                border-radius: 50px;
+                background: whitesmoke url("img/iconfinder_arrow-up-01_186407.png") center center/35px no-repeat;
+                box-shadow: gray 2px 2px 5px;
+            }
+            #float {
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 class="title"><a href="./Homework3.html">My WebPage</a></h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">help</a></li>
+                <li><a href="https://github.com/arenslien" target="_blank">github</a></li>
+                <li><a href="#">article</a></li>
+                <li><a href="#">etc</a></li>
+            </ul>
+        </nav>
+        <section>
+            <h2 class="subtitle">Python</h2>
+            <div class="near-h2">
+                <div class="card-box" id="card1" style="background:#d15151; left: 20px; top: 10px;"></div>
+                <div class="card-box" id="card2" style="background:#4cc7ec; left: 27px; top: 40px;"></div>
+                <div class="card-box" id="card4" style="background:#fff56f; left: 30px; top: 20px;"></div>
+                <div class="card-box" id="card3" style="background:#86e66f; left: 23px; top: 32px;"></div>
+                <div class="card-box" id="card5" style="background:#2d6feb; left: 40px; top: 35px;"></div>
+            </div>
+            
+            <div class="big-box">
+                <div class="small-box" style="left: 25px; top: 20px;">
+                    <p>Algorithm</p>
+                </div>
+                <div class="small-box" style="left: 200px; top: 20px;">
+                    Chatbot
+                </div>
+                <div class="small-box" style="left: 375px; top: 20px;">
+                    Machine Learning
+                </div>
+                <div class="small-box" style="left: 25px; top: 180px;">
+                    tensorflow
+                </div>
+                <div class="small-box" style="left: 200px; top: 180px;">
+                    Web Crawling
+                </div>
+                <div class="plus-box" style="left: 375px; top: 180px;"></div>
+            </div>
+            <h2 class="subtitle">HTML</h2>
+            <div class="near-h2">
+                <div class="card-box" id="card3" style="background:#d15151; left: 23px; top: 8px;"></div>
+                <div class="card-box" id="card2" style="background:#4cc7ec; left: 20px; top: 40px;"></div>
+                <div class="card-box" id="card1" style="background:#fff56f; left: 33px; top: 20px;"></div>
+                <div class="card-box" id="card4" style="background:#86e66f; left: 40px; top: 29px;"></div>
+                <div class="card-box" id="card5" style="background:#2d6feb; left: 35px; top: 35px;"></div>
+            </div>
+            <div class="big-box">
+                <div class="small-box" style="left: 25px; top: 20px;">
+                    Web Programming 2020 2nd
+                </div>
+                <div class="plus-box" style="left: 200px; top: 20px;">
+                </div>
+            </div>
+            <h2 class="subtitle">Java</h2>
+            <div class="near-h2">
+                <div class="card-box" id="card3" style="background:#d15151; left: 21px; top: 40px;"></div>
+                <div class="card-box" id="card1" style="background:#4cc7ec; left: 22px; top: 10px;"></div>
+                <div class="card-box" id="card5" style="background:#fff56f; left: 37px; top: 16px;"></div>
+                <div class="card-box" id="card2" style="background:#86e66f; left: 27px; top: 21px;"></div>
+                <div class="card-box" id="card4" style="background:#2d6feb; left: 34px; top: 34px;"></div>
+            </div>
+            <div class="big-box">
+                <div class="small-box" style="left: 25px; top: 20px;">
+                    Baekjoon
+                </div>
+                <div class="small-box" style="left: 200px; top: 20px;">
+                    Programming Shopping GUI
+                </div>
+                <div class="plus-box" style="left: 375px; top: 20px;"></div>
+            </div>
+        </section>
+        <div class="up">
+        </div>
+    </body>
+</html>
