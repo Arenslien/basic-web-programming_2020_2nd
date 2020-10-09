@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>7주차 실습 - 테이블 스타일</title>
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+            td, th {
+                border: 1px solid rgb(153, 66, 55);
+                width: 100px;
+                height: 30px;
+                padding: 0px 10px;
+            }
+            th {
+                background: rgb(153, 67, 55);
+                color: white; 
+            }
+            thead th {
+                height: 25px;
+            }
+            td, tfoot th {
+                text-align: right;
+            }
+            tr > td:first-child , tr > th:first-child, tbody > tr:nth-child(1) > td:nth-child(2) {
+                text-align: center;
+            }
+            tbody > tr:nth-child(odd) {
+                background: rgb(207, 166, 161);
+            }
+            tbody > tr:nth-child(odd):hover {
+                background: #443431;
+                color: white;
+            }
+            tbody > tr:nth-child(even):hover {
+                background: gray;
+                color: white;
+            }
+            table caption {
+                margin: 10px;
+                font-size: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>코로나 환자 현황</h2>
+        <table>
+            <caption>코로나 지역별 발생동향</caption>
+            <thead>
+                <tr>
+                    <th>국내/국외</th>
+                    <th>시도명</th>
+                    <th>격리중</th>
+                    <th>격리해제</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th colspan="2">합계</th>
+                    <th>4697</th>
+                    <th>16,146</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td rowspan="3">국내</td>
+                    <td>서울</td>
+                    <td>7,082</td>
+                    <td>3,625</td>  
+                </tr>
+                <tr>
+                    <td>대구</td>
+                    <td>106</td>
+                    <td>6,785</td>
+                </tr>
+                <tr>
+                    <td>경기</td>
+                    <td>1,221</td>
+                    <td>2,359</td>
+                </tr>
+                <tr>
+                    <td colspan="2">국외</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <table>
+            <caption><h3>테이블 제목</h3></caption>
+            <thead>
+                <tr>
+                    <th>1행 1열</th>
+                    <th>1행 2열</th>
+                    <th>1행 3열</th>
+                    <th>1행 4열</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2행 1열</td>
+                    <td rowspan="3">2행 2열</td>
+                    <td>2행 3열</td>
+                    <td>2행 4열</td>
+                </tr>
+                <tr>
+                    <td>3행 1열</td>
+                    <td colspan="2">3행 3열</td>
+                </tr>
+                <tr>
+                    <td>4행 1열</td>
+                    <td>4행 3열</td>
+                    <td>4행 4열</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

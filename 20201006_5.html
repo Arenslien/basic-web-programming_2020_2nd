@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS 애니메이션</title>
+        <style>
+            @keyframes bomb {
+                from {
+                    font-size: 5em;
+                }
+                to {
+                    font-size: 1em;
+                }
+            }
+            span.bomb {
+                animation-name: bomb;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+                text-align: center;
+            }
+            span.trans {
+                transition: all 5s ease-out;
+            }
+            span.trans:hover {
+                font-size: 500%;
+                background: cyan;
+            }
+            div {
+                background: #8d588d;
+                display: inline-block;
+                width: 300px;
+                margin: 10px 0px;
+
+            }
+            div.transform1 {
+                transform: translate(50px, 10px);
+            }
+            div.transform2 {
+                transform: translateX(150px);
+            }
+            div.transform3 {
+                transform: translateY(-5px);
+            }
+            div.transform4 {
+                transform: scale(1.5, 1.5);
+            }
+            div.transform5 {
+                transform: scaleX(1.2);
+            }
+            div.transform6 {
+                transform: scaleY(1.2);
+            }
+            div.transform7 {
+                transform: rotate(50deg);
+            }
+            div.transform8 {
+                transform: skew(30deg, 10deg);
+            }
+            div.transform9 {
+                transform: skewX(30deg);
+            }
+            div.transform10 {
+                transform: skewY(30deg);
+            }
+
+        </style>
+    </head>
+    <body>
+        <h3>CSS 애니메이션</h3>
+        <!-- <div>
+            <span class="bomb">꽝</span>
+        </div> -->
+        <p>
+            <span class="trans">꽝</span>
+        </p>
+        <div class="transform1">
+            translate(x,y)
+        </div>
+        <div class="transform2">
+            translateX(n)
+        </div>
+        <div class="transform3">
+            translateY(n)
+        </div>
+        <div class="transform4">
+            scale(w,h)
+        </div>
+        <div class="transform5">
+            scaleX(n)
+        </div>
+        <div class="transform6">
+            scaleY(n)
+        </div>
+        <div class="transform7">
+            rotate(angle)
+        </div>
+        <div class="transform8">
+            skew(x-angle, y-angle)
+        </div>
+        <div class="transform9">
+            skewX(angel)
+        </div>
+        <div class="transform10">
+            skewY(angle)
+        </div>
+    </body>
+</html>

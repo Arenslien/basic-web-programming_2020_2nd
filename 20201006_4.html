@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>7주차 실습 2 - 폼 스타일</title>
+        <style>
+            fieldset {
+                width: 600px;
+                border: dashed 2px coral;
+                border-radius: 10px;
+                margin: 30px 0px 0px 30px;
+                padding: 30px;
+            }
+            legend {
+                color: coral;
+                font-weight: bold;
+                font-size: 1.2em;
+            }
+            label {
+                display: block;
+                margin: 15px 30px;
+            }
+            label span {
+                display: inline-block;
+                width: 120px;
+                text-align: left;
+                padding-right: 10px;
+            }
+            input, textarea, select {
+                border: 1px solid coral;
+                border-radius: 5px;
+            }
+            input:hover, textarea:hover, select:hover {
+                background: rgba(255, 127, 80, 0.25);
+            }
+            input[type=text]:focus,
+            input[type=password]:focus,
+            input[type=email]:focus,
+            input[type=url]:focus,
+            input[type=tel]:focus,
+            input[type=search]:focus,
+            textarea:focus {
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+            label.check {
+                display: inline-block;
+            }
+            input[type=reset], input[type=submit] {
+                display: inline-block;
+                background: rgba(255, 127, 80, 0.4);
+                margin: 0px 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <form name="info_form" action="#" method="GET">
+            <fieldset>
+                <legend>개인 정보</legend>
+                <label for="userId">
+                    <span>사용자 ID</span>  
+                    <input id="userID" type="text" size="15" value="" placeholder="id">
+                </label>
+                <label for="pwd">
+                    <span>비밀번호</span> 
+                    <input id="pwd" type="password" size="15" value="" placeholder="password">
+                </label>
+                <label>
+                    <span>email</span>
+                    <input name="email" type="email" placeholder="example@email.com">
+    
+                </label>
+                <label>
+                    <span>홈페이지</span>
+                    <input name="homepage" type="url" placeholder="https://google.com">
+                </label>
+                <label>
+                    <span>전화번호</span>
+                     
+                    <input name="phonenumber" type="tel" placeholder="010-XXXX-XXXX">
+                </label>
+                <label>
+                    <span>국적(input-datalist)</span>
+                    <input name="countries" type="text" list="countries">
+                </label>
+                <datalist id="countries">
+                    <option value="가나">
+                    <option value="스위스">
+                    <option value="브라질">
+                </datalist>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>메뉴 선택</legend>
+                <label>
+                    <span>메뉴 검색</span>
+                    <input type="search" placeholder="메뉴 이름">
+                </label>
+                <label>
+                    <span>메뉴(select)</span>
+                    <select name="menu" size="1">
+                        <option value="1">짜장면</option>
+                        <option value="2" selected>짬뽕</option>
+                        <option value="3">탕수육</option>
+                    </select>
+                </label>
+                <label class="check">
+                    <input type="checkbox" name="jajjang" value="1">짜장면<img src="picture/jajjang.png" width="70px">
+                </label>
+                <label class="check">
+                    <input type="checkbox" name="jjambbong" value="2">짬뽕<img src="picture/jjambbong.png" width="100px">
+                </label>
+                <label class="check">
+                    <input type="checkbox" name="tangsuyuk" value="3">탕수육<img src="picture/tangsuyook.jpg" width="80px">
+                </label>
+    
+                <label class="check">
+                    <input type="radio" name="chineseFood" value="1">짜장면<img src="picture/jajjang.png" width="70px">
+                </label>
+                <label class="check">
+                    <input type="radio" name="chineseFood" value="2" checked>짬뽕<img src="picture/jjambbong.png" width="100px">
+                </label>
+                <label class="check">
+                    <input type="radio" name="chineseFood" value="3">탕수육<img src="picture/tangsuyook.jpg" width="80px">
+                </label>
+    
+                <label>
+                    <span>배달일</span>
+                    <input type="date" value="2020-09-24">
+                </label>
+                <label>
+                    <span>배달시간</span>
+                    <input type="time" value="12:00">
+                </label>
+                <label>
+                    <span>기타 요구사항</span>
+                    <textarea rows="5" cols="80" wrap="SOFT" placeholder="기타 요구사항을 쓰세요."></textarea>
+                </label>
+            </fieldset>
+        
+            <fieldset>
+                <legend>환경 설정</legend>
+                <label>
+                    <span>글자색 선택</span>
+                    <input type="color" value="#00BFFF" onchange="document.body.style.color=this.value">
+                </label>
+                <label>
+                    <span>배경색 선택</span>
+                    <input type="color" value="#00BFFF" onchange="document.body.style.background=this.value">
+                </label>
+                <label>
+                    <span>웹프로그래밍<br>학습시간</span>
+                    <input type="number" name="duration" min="0.0" max="10.0" step="0.5">
+                </label>
+                <label>
+                    <span>적정 학습 온도</span>
+                    10&deg;<input type="range" min="10" max="30"> 30&deg;
+                </label>
+            </fieldset>
+            <label>
+                <input type="reset" value="취소">
+                <input type="submit" value="완료">
+            </label>
+        </form>
+    </body>
+</html>

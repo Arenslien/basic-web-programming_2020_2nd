@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>20201006_1.html</title>
+        <style>
+            table {
+                border: 1px solid blue;
+                border-collapse: collapse;
+            }
+            th, td {
+                border: 1px dotted green;
+                width: 100px;
+                height: 20px;
+                text-align: right;
+            }
+            thead th {
+                height: 40px;
+                text-align: center;
+            }
+            table.t1 {
+                border-collapse: collapse;
+            }
+            thead.t1 {
+                background: gray;
+                color: yellow;
+            }
+            td, tfoot th {
+                border-bottom: 1px solid gray;
+            }
+            #t2 {
+                background: gray;
+                color: yellow;
+            }
+            tbody tr:nth-child(even) {
+                background: aliceblue;
+            }
+            tbody tr:hover {
+                background: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>1학기 성적</h3>
+        <hr>
+        <table>
+            <thead>
+                <tr><th>이름</th><th>HTML</th><th>CSS</th></tr>
+            </thead>
+            <tfoot>
+                <tr><th>합</th><th>175</th><th>169</th></tr>
+            </tfoot>
+            <tbody>
+                <tr><td>황기태</td><td>80</td><td>70</td></tr>
+                <tr><td>이재문</td><td>95</td><td>99</td></tr>
+            </tbody>
+        </table>
+        <hr>
+        <table class="t1">
+            <thead class="t1">
+                <tr><th>이름</th><th>HTML</th><th>CSS</th></tr>
+            </thead>
+            <tfoot>
+                <tr><th>합</th><th>175</th><th>169</th></tr>
+            </tfoot>
+            <tbody>
+                <tr><td>황기태</td><td>80</td><td>70</td></tr>
+                <tr><td>이재문</td><td>95</td><td>99</td></tr>
+            </tbody>
+        </table>
+        <hr>
+        <table class="t2">
+            <thead id="t2">
+                <tr><th>이름</th><th>HTML</th><th>CSS</th></tr>
+            </thead>
+            <tfoot id="t2">
+                <tr><th>합</th><th>175</th><th>169</th></tr>
+            </tfoot>
+            <tbody>
+                <tr><td>황기태</td><td>80</td><td>70</td></tr>
+                <tr><td>이재문</td><td>95</td><td>99</td></tr>
+            </tbody>
+        </table>
+    </body>
+</html>
