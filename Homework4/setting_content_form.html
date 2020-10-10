@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>setting_content</title>
+        <link type="text/css" rel="stylesheet" href="./css/basic.css">
+        <style>
+            .user-icon {
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+                display: inline-block;
+                background: white url("./img/user-icon.png") center center/100px 100px no-repeat;
+                margin: 20px 0px 0px 20px;
+            }
+            label {
+                display: block;
+                margin-top: 10px;
+            }
+            span.in-label {
+                display: inline-block;
+                width: 120px;
+                height: 30px;
+            }
+            input[type=text],
+            input[type=email],
+            input[type=tel],
+            input[type=url],
+            input[type=submit],
+            textarea, select {
+                border: #77bb58 2px solid;
+                border-radius: 5px;
+                width: 210px;
+                height: 30px;
+                background: #b3ff9018;
+            }
+            input[type=text].name {
+                width: 95px;
+                margin-right: 6px;
+            }
+            textarea {
+                height: auto;
+            }
+            input[type=submit] {
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <form>
+                <label>
+                    <span class="user-icon"></span>
+                    <input type="file">
+                </label>
+                <label>
+                    <span class="in-label">Full Name</span>
+                    <input type="text" placeholder="First Name" class="name">
+                    <input type="text" placeholder="Last Name" class="name">
+                </label>
+                <label>
+                    <span class="in-label">E-mail</span>
+                    <input type="email" placeholder="email@example.com" >
+                </label>
+                <label>
+                    <span class="in-label">Phone Number</span>
+                    <input type="tel" placeholder="010-XXXX-XXXX">
+                </label>
+                <label>
+                    <span class="in-label">Info</span>
+                    <textarea rows="3" wrap="hard" placeholder="Introduction to myself">
+                    </textarea>
+                </label>
+                <label>
+                    <span class="in-label">Git URL</span>
+                    <input type="url" placeholder="https://github.com/username">
+                </label>
+                <label>
+                    <span class="in-label">Job</span>
+                    <select name="Job">
+                        <option value="1">학생</option>
+                        <option value="2">회사원</option>
+                        <option value="3">공무원</option>
+                        <option value="4">주부</option>
+                        <option value="5">무직</option>
+                    </select>
+                </label>
+                <label>
+                    <span class="in-label">Gender</span>
+                    <input type="radio" name="gender">남
+                    <input type="radio" name="gender">여
+                </label>
+                <label>
+                    <span class="in-label">Birth Day</span>
+                    <input type="date">
+                </label>
+                <label>
+                    <input type="submit">
+                </label>
+            </form>
+        </div>
+    </body>
+</html>

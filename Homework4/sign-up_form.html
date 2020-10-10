@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up</title>
+        <link type="text/css" rel="stylesheet" href="./css/basic.css">
+        <style>
+            body {
+                background: #508164;
+            }
+            fieldset.sign-up {
+                border: none;
+                background: white;
+                margin: 60px auto auto auto;
+                width: 300px;
+                box-shadow: 0px 0px 15px #000000;
+                padding: 30px;
+            }
+            input {
+                display: block;
+                width: 250px;
+                height: 50px;
+                border: none;
+            }
+            input[type=text],
+            input[type=password],
+            input[type=email] {
+                margin: 20px;
+                background: #dddddd93;
+                border-radius: 2px;
+                padding-left: 20px;
+            }
+            input[type=submit] {
+                margin: auto;
+                background: #508164;
+                color: white;
+                width: 270px;
+            }
+            input[type=submit]:hover {
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 class="title"><a href="Homework4.html">My WebPage</a> - Sign Up</h1>
+        </header>
+        <section>
+            <form>
+                <fieldset class="sign-up">
+                    <input type="email" placeholder="E-mail@example.com">
+                    <input type="text" placeholder="User name">
+                    <input type="password" placeholder="Password">
+                    <input type="password" placeholder="Confirm Password">
+                    <input type="submit" value="Sign Up">
+                </fieldset>
+            </form>
+        </section>
+    </body>
+</html>

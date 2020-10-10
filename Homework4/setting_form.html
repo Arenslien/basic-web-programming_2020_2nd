@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>setting</title>
+        <link type="text/css" rel="stylesheet" href="css/basic.css">
+        <style>
+            iframe {
+                display: inline-block;
+                border: 2px solid #44564A;
+                margin-top: 10px;
+            }
+            iframe.nav {
+                width: 200px;
+                height: 530px;
+                border-right: 2px solid #44564A;
+            }
+            iframe.content {
+                width: 390px;
+                height: 530px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 class="title"><a href="./Homework4.html">My WebPage</a> - Setting</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="./login_form.html" target="_self">login</a></li>
+                <li><a href="https://github.com/arenslien" target="_blank">github</a></li>
+                <li><a href="./setting_form.html">setting</a></li>
+                <li><a href="#">etc</a></li>
+            </ul>
+        </nav>
+        <section>
+            <iframe src="./setting_nav_form.html" class="nav" name="nav"></iframe>
+            <iframe src="./setting_content_form.html" class="content" name="content"></iframe>
+        </section>
+    </body>
+</html>
