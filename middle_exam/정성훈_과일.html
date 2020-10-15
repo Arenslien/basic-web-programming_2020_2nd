@@ -1,0 +1,84 @@
+<!--정성훈 60191686-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>과일의 효능</title>
+        <style>
+            h2 {
+                margin: 30px 50px;
+                border: brown 10px double;
+                border-left: none;
+                border-right: none;
+                text-align: center;
+                color: brown
+            }
+            div {
+                display: inline-block;
+                width: 200px;
+                height: 100px;
+                border-radius: 0px 0px 40px 40px;
+            }
+            div.frame {
+                width: 100%;
+                height: 100px;
+                margin-bottom: 10px;
+                margin-top: 15px;
+            }
+            div.yellow {
+                background: rgba(255, 255, 0, 0.4);
+                float: left;
+            }
+            div.purple {
+                background: rgba(128, 0, 128, 0.4);
+                float: right;
+            }
+            div.red {
+                background: rgba(255, 0, 0, 0.4);
+            }
+            img#fruit {
+                position: fixed;
+                bottom: 5px;
+                right: 5px;
+                width: 250px;
+                height: 250px;
+                z-index: -1;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h2>과일의 효능</h2>
+        </header>
+        <section>
+            채소와 과일에는 비타민, 무기질 뿐만 아니라 각종 질병을
+            예방해주는 생리활성물질이 풍부하다.
+            <dl>
+                <div class="frame">
+                    <div class="yellow">
+                        <dt><ins><b><em>노란색식품</em></b></ins></dt>
+                        <dd>
+                            당근, 오렌지, 호박<br>
+                            노화 지연, 암 예방
+                        </dd>
+                    </div>
+                    <div class="purple">
+                        <dt><ins><b><em>보라색식품</em></b></ins></dt>
+                        <dd>
+                            포도, 가지, 블루베리
+                            간 독성 저하, 염증반응 저하
+                        </dd>
+                    </div>
+                </div>
+                <div class="red">
+                    <dt><ins><b><em>빨간색식품</em></b></ins></dt>
+                    <dd>
+                        사과, 토마토, 딸기<br>
+                        심장병 예방, 항산화 기능
+                    </dd>
+                </div>
+            </dl>
+            <img id="fruit" src="./img/fruit.jpg">
+        </section>
+    </body>
+</html>
