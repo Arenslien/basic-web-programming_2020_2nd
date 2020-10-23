@@ -1,0 +1,35 @@
+<!-- 자바스크립트 기초 실습 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>20201023_1.html</title>
+        <script src="./20201023_1.js">
+            // function over(obj) {
+            //     obj.src="./picture/house1.jpg";
+            // }
+            // function out(obj) {
+            //     obj.src="./picture/google.png"
+            // }
+        </script>
+    </head>
+    <body>
+        <h2>이벤트 리스너 onmouseover & onmouseout</h2>
+        <hr>
+        <img src="picture/google.png" alt="Image" onmouseover="this.src='./picture/house1.jpg'" onmouseout="this.src='./picture/google.png'">
+        <h2>&lt;script&gt; 활용한 자바스크립트 작성</h2>
+        <img src="picture/google.png" alt="Image" onmouseover="over(this)" onmouseout="out(this)">
+        <h2>URL 부분에 자바스크립트 작성</h2>
+        <hr>
+        <a href="javascript:alert('클릭하셨어요?')">HELLO</a>
+        <h2>js 파일을 따로 작성해 자바스크립트 작성</h2>
+        <hr>
+        <img src="picture/google.png" alt="Image" onmouseover="over(this)" onmouseout="out(this)">
+        <h2>document.write()를 활용한 웹 페이지 출력</h2>
+        <hr>
+        <script>
+            document.write("<h3>Welcome</h3>");
+            document.write("2 + 5 는 <br>");
+            document.write("<mark>7 입니다.</mark>")
+        </script>
+    </body>
+</html>

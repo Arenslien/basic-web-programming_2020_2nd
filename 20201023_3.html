@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>9주차 출석 과제</title>
+        <script src="./20201023_1.js">
+            // function over(obj) {
+            //     obj.src="./picture/naver.png"
+            // }
+            // function out(obj) {
+            //     obj.src="./picture/google.png"
+            // }
+        </script>
+    </head>
+    <body>
+        <h2>예제 6-1</h2>
+        <hr>
+        <img src="./picture/google.png" width="300px" alt="image" onmouseover="this.src='./picture/naver.png'" onmouseout="this.src='./picture/google.png'">
+        <h2>예제 6-2</h2>
+        <hr>
+        <img src="./picture/google.png" width="300px" alt="image" onmouseover="over(this)" onmouseout="out(this)">
+        <h2>예제 6-3</h2>
+        <hr>
+        <img src="./picture/google.png" width="300px" alt="image" onmouseover="over(this)" onmouseout="out(this)">
+        <h2>예제 6-4</h2>
+        <hr>
+        <a href="javascript:alert('alert창입니다.')">URL부분에 자바스크립트 작성</a><br><br><br>
+        <h2>예제 6-6</h2>
+        <hr>
+        <script>
+            var x = 100; //전역변수
+            
+            function f() {
+                var x = 1; //지역 변수
+                document.write("지역변수 x=" + x);
+                document.write("<br>");
+                document.write("전역변수 x=" + this.x);
+            }
+            f();
+        </script>
+        <h2>예제 6-16</h2>
+        <hr>
+        <script>
+            var price = 0;
+            var coffee = prompt("무슨 커피 드릴까요?", "");
+            switch(coffee) {
+                case "espresso":
+                    
+            }
+        </script>
+        <h2>예제 6-18/h2>
+        <hr>
+        <h2>예제 6-24</h2>
+        <hr>
+
+    </body>
+</html>

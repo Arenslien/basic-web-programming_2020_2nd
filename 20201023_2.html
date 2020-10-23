@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>20201023_2.html</title>
+        <script>
+            function click() {
+                return prompt("당신의 이름은 무엇입니까?", "");
+                // if(a == null) {
+                //     alert("취소를 누르셨네요.");
+                // }
+                // else if(a == "") {
+                //     alert("입력을 해주세요.")
+                // }
+                // else {
+                //     alert(a + "를 입력하셨습니다.")
+                // }
+            }
+        </script>
+    </head>
+    <body>
+        <h2>prompt & confirm & alert</h2>
+        <hr>
+        <button onclick="click()">Button</button>
+        <h2>지역변수와 전역변수</h2>
+        <hr>
+        <script>
+            var x = 100;
+            function f() {
+                var x = 1;
+
+                document.write("지역변수 x=" + 1);
+                document.write("<br>");
+                document.write("전역변수 x=" + this.x);
+            }
+
+            f();
+        </script>
+    </body>
+</html>
