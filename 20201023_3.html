@@ -44,13 +44,38 @@
             var coffee = prompt("무슨 커피 드릴까요?", "");
             switch(coffee) {
                 case "espresso":
-                    
+                case "에스프레소" : price = 2000;
+                    break;
+                case "카푸치노" : price = 3000;
+                    break;
+                case "카페라떼" : price = 3500;
+                    break;
+                default:
+                    document.write(coffee + "는 없습니다.");
+            }
+            if(price != 0) {
+                document.write(coffee + "는 " + price + "원입니다.");
             }
         </script>
-        <h2>예제 6-18/h2>
+        <h2>예제 6-18</h2>
         <hr>
+        <script>
+            var intnum = parseInt(prompt("0보다 큰 정수를 입력하세요", ""));
+            var sum = 0;
+
+            for(var i=0; i<=intnum; i++) {
+                sum += i;
+            }
+            document.write("0에서 " + intnum + "까지 합은 " + sum);
+
+        </script>
         <h2>예제 6-24</h2>
         <hr>
-
+        <script>
+            var input_num = parseInt(prompt("구구단 몇 단을 원하세요", ""));
+            for(var i=0; i<9; i++) {
+                document.write(input_num+"x"+(i+1)+"="+input_num*(i+1)+"<br>");
+            }
+        </script>
     </body>
 </html>
