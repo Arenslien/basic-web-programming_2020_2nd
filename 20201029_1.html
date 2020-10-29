@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function sumF1() {
+                for(var i, sum=0; i<10; i++) {
+                    sum += i+1;
+                }
+                document.write(sum);
+            }
+            function sumF2() {
+                for(let i, sum=0; i<10; i++) {
+                    sum += i+1;
+                }
+                document.write(sum);
+            }
+            function sumF3() {
+                for(i, sum=0; i<10; i++) {
+                    sum += i+1;
+                }
+                document.write(sum);
+            }
+        </script>
+    </head>
+    <body>
+        <h2>var 변수 & let 변수</h2>
+        <hr>
+        <script>
+            document.write(sumF1()+"-1<br>");
+            // document.write(sumF2()+"-2<br>");
+            // document.write(sumF3()+"-3<br>");
+            document.write(typeof("happy"));
+        </script>
+
+    </body>
+</html>

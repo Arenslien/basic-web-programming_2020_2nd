@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>20201029_3.html</title>
+    </head>
+    <body>
+        <h2>템플릿 문자열 사용 실습</h2>
+        <hr>
+        <script>
+            let num1 = 100;
+            let num2 = 200;
+            let num3 = 300;
+            document.write(`${num1} + ${num2} + ${num3} = ${num1+num2+num3}`);
+        </script>
+        <h2>화살표 함수 사용</h2>
+        <hr>
+        <script>
+            let arrowFunction = (x, y) => x+y;
+            let arrowFunction2 = () => {
+                document.write("Hi!<br>");
+                document.write("JavaScript<br>");
+            }
+            let arrowFunction3 = (x, y) => {
+                return x*y;
+            }
+            document.write(arrowFunction(1, 2)+"<br>");
+            arrowFunction2();
+            document.write(arrowFunction3(10, 2));
+        </script>
+        <h2>setTimeout() 함수 사용 실습</h2>
+        <hr>
+        <script>
+            setTimeout(
+                function() {
+                    alert("3초 지났습니다.")
+                },
+                3000
+            );
+        </script>
+        <h2>addN() 함수 사용 실습</h2>
+        <hr>
+        <script>
+            function addN(num) {
+                var adder = function(x) {
+                    return num + x;
+                }
+                return adder;
+            }
+            var add2 = addN(2)
+            document.write(add2(8)+"<br>");
+            document.write(add2(18)+"<br>");
+            var add100 = addN(100);
+            document.write(add100(100)+"<br>");
+            document.write(add100(200));
+        </script>
+        <h2>makeCounter() 함수 사용 실습</h2>
+        <hr>
+        <script>
+            function makeCounter() {
+                var count = 0;
+
+                function counter() {
+                    count = count + 1;
+                    return count;
+                }
+                return counter;
+            }
+            var doCount = makeCounter();
+            document.write(doCount()+"<br>");
+            document.write(doCount()+"<br>");
+            document.write(doCount()+"<br>");
+        </script>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>20201029_2.html</title>
+        <script>
+            function test1(num) {
+                for(let i=0; i<num; i++) {
+                    document.write("신성우 바보<br>");
+                }
+            }
+            let test2 = function(num) {
+                for(let i=0; i<num; i++) {
+                    document.write("신성우는 바보가 아닐지도?<br>");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h2>선언 함수와 익명 함수 활용</h2>
+        <hr>
+        <script>
+            test1(3);
+            test2(2);
+        </script>
+        <h2>화살표 함수</h2>
+        <hr>
+        <script>
+            let printMsg = function() {
+                document.write("Hi<br>");
+                document.write("Javascript<br>");
+            }
+            let printMsg2 = () => {
+                document.write("Hi<br>");
+                document.write("Javascript<br>");
+            }
+            printMsg();
+            printMsg2();
+            function add1(x,y) {
+                return x+y;
+            }
+            let add2 = function (x,y) {
+                return x+y;
+            }
+            let add3 = (x,y) => {
+                return x+y;b
+            }
+            let add4 = (x,y) => (x+y);
+            document.write(add1(1, 3));
+            document.write(add1(2, 3));
+            document.write(add1(1, 5));
+            document.write(add1(5, 3)+"<br>");
+            function makeTea(cups, tea) {
+                document.write(`${cups}잔의 ${tea} 차를 끓입니다.`);
+            }
+            makeTea(3); //파라미터 값이 없으면 undifined로 된다
+            setTimeout(function() {
+                alert("3초 지났습니다.", 3000);
+            })
+            setInterval(
+                alert("2초마다 호출됩니다.", 2000)
+            );
+            function addN(num) {
+                var adder = function(x) {
+                    return num + x;
+                }
+                return adder
+            }
+            var add2 = addN(2);
+            documnet.write(add2(10));
+        </script>
+    </body>
+</html>
