@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>11주차 출석 과제</title>
+        <script>
+            function pr(msg, arr) {
+                document.write(msg + arr.toString() + "<br>");
+            }
+        </script>
+        <style>
+            div#box {
+                display: inline-block;
+                width: 500px;
+                height: 300px;
+                background: grey;
+            }
+        </style>
+    </head>
+    <h2>7 - 4 예제 : Array 객체의 메소드 활용</h2>
+    <hr>
+    <script>
+        var a = ["황", "김", "이"];
+        var b = ["박"];
+        pr("배열 a = ", a);
+        pr("배열 b = ", b);
+    </script>
+    <hr>
+    <script>
+        c = a.concat(b);
+        pr("c = a.concat(b)후 c = ", c);
+        pr("c = a.concat(b)후 a = ", a);
+
+        c = a.join("##");
+        pr("c = a.join()후 c = ", c);
+        pr("c = a.join()후 a = ", a);
+
+        c = a.reverse();
+        pr("c = a.reverse()후 c = ", c);
+        pr("c = a.reverse()후 a = ", a);
+
+        c = a.slice(1, 2);
+        pr("c = a.slice(1, 2)후 c = ", c);
+        pr("c = a.slice(1, 2)후 a = ", a);
+
+        c = a.sort();
+        pr("c = a.sort()후 c = ", c);
+        pr("c = a.sort()후 a = ", a);
+
+        pr("a.toString() : ",a.toString());
+    </script>
+    <h2>7 - 6 예제 : 방문 시간에 따라 배경색 만들기</h2>
+    <hr>
+    <div id="box">
+        <p>
+            페이지 방문할 때의 초(second)가<br>
+            짝수이면 violet<br>
+            홀수이면 lightskyblue 색의 배경
+            <hr>
+            <script>
+                var current_time = new Date();
+                var div_box = document.getElementById("box");
+                if(current_time.getSeconds() % 2 == 0) {
+                    div_box.style["backgroundColor"] = "violet";
+                }
+                else {
+
+                    div_box.style.backgroundColor = "lightskyblue";
+                }
+                document.write("현재 시간 : ");
+                document.write(current_time.getHours(), "시");
+                document.write(current_time.getMinutes(), "분");
+                document.write(current_time.getSeconds(), "초<br>");
+
+            </script>
+        </p>
+    </div>
+    <h2>7 - 7 예제 : String 객체의 메소드 활용</h2>
+    <hr>
+    <script>
+        var println = function (msg) {
+            document.write(msg+"<br>");
+        }
+        var a = "Boys and Girls";
+        var b = "!!";
+        println("a : " + a);
+        println("b : " + b);
+        document.write("<hr>")
+
+        println(a[0] + " = " + a.charAt(0));
+        println(a.concat(b, "입니다."));
+        println(a.indexOf("s"));
+        println(a.indexOf("And"));
+        println(a.slice(9, 14) + " = Girls");
+        println(a.substr(5, 3));
+        println(a.toUpperCase());
+        println(a.replace("and", "or"));
+        println("     HELLO     ".trim());
+        document.write("<hr>")
+
+        var sub = a.split(" ");
+        for(var word of sub) {
+            println(word);
+        }
+        document.write("<hr>")
+        
+        println("String 메소드를 실행 후 a와 b 변함 없음")
+        println("a : " + a);
+        println("b : " + b);
+    </script>
+    <h2>7 - 8 예제 : Math를 이용한 구구단 연습</h2>
+    <hr>
+    <script>
+        function randomInt() {
+            return Math.floor(Math.random()*9) + 1;
+        }
+        //구구단 문제 생성
+        var ques = randomInt() + " * " + randomInt();
+
+        var user = prompt(ques+"값은 얼마입니까?", 0);
+
+        if(user == null) {
+            document.write("구구단 연습을 종료합니다.");
+        }
+        else {
+            var ans = eval(ques);
+            if(ans == user) {
+                document.write("정답!");
+            }
+            else {
+                document.write("아니오!");
+            }
+            document.write("<br>"+ques + " = " + "<b>" + ans + "</b>입니다.");
+        }
+    </script>
+    <h2>7 - 10 예제 : 리터럴 표기법으로 account 객체 생성</h2>
+    <hr>
+    <script>
+        var account = {
+            owner: "황기태",
+            code: "111",
+            balance: 35000,
+
+            inquiry : function() {
+                return this.balance;
+            },
+            deposit: function (money) {
+                this.balance += money;
+            },
+            withdraw: function(money) {
+                this.balance -= money;
+                return money;
+            }
+        };
+        document.write("account : " + account.owner + ", ");
+        document.write(account.code + ", ");
+        document.write(account.inquiry() + "<br>");
+        account.deposit(10000);
+        document.write("10000원 저금 후 잔액은 " + account.inquiry()+"<br>");
+        document.write(account.withdraw(5000)+"원 인출 후 잔액은 " + account.inquiry());
+    </script>
+    <h2>7 - C 예제 : </h2>
+    <hr>
+</html>

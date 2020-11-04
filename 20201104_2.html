@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>20201104_2.html</title>
+    </head>
+    <body>
+        <h2>배열의 sort()</h2>
+        <hr>
+        <script>
+            var arrayNum = [52, 270, 103, 69, 32];
+            arrayNum.sort()
+            document.write(arrayNum + "<br>");
+            arrayNum.sort(function (left, right) {
+                return left - right;
+            });
+            document.write(arrayNum + "<br>");
+            arrayNum.sort(function (left, right) {
+                return right - left;
+            });
+            document.write(arrayNum + "<br>");
+        </script>
+        <h2>기본형 객체 생성자</h2>
+        <hr>
+        기본형으로 사용하는 것이 더 빠름<br>
+        객체 생성자 대신 기본 리터럴 사용
+        <script>
+            var num = 1;
+            var str = "str";
+            var bool = true;
+            document.write(num + ", " + str + ", " + bool + "<br>");
+        </script>
+        <h2>Number 객체</h2>
+        <hr>
+        <script>
+            var num = 3.141592;
+            document.write(num.toFixed(2)+"<br>");
+            document.write(num.toFixed(4)+"<br>");
+        </script>
+    </body>
+</html>

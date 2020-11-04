@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>20201104_1.html</title>
+    </head>
+    <body>
+        <h2>코어 객체 생성</h2>
+        <hr>
+        new 키워드를 사용한다.<br>
+        var today = new Data();<br>
+        var msg = <b>new</b> string("Hello");
+        <h2>객체 생성 및 활용</h2>
+        <hr>
+        <script>
+            var today = new Date();
+
+            document.write("현재 시간 : " + today.toLocaleString()+"<br>");
+            
+            var mystr = new String("Java Script");
+            document.write("mystr = " + mystr + "<br>");
+            document.write("length of mystr = " + mystr.length + "<br>");
+
+            var any = [0, 5.5, new Date(), "hi"];
+
+            for(let i=0; i<any.length; i++) {
+                document.write(any[i] + "<br>");
+            }
+            any.push("This is push.");
+            document.write(any[any.length - 1]+"<br>");
+            document.write(any.toString());
+        </script>
+        <h2>for in & for of</h2>
+        <hr>
+        <script>
+            for(var i in any) {
+                document.write(i + "번째 요소 = " + any[i] +"<br>");
+            }
+            for(var item of any) {
+                document.write(item+"<br>");
+            }
+        </script>
+    </body>
+</html>
