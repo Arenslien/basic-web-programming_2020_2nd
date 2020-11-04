@@ -158,6 +158,35 @@
         document.write("10000원 저금 후 잔액은 " + account.inquiry()+"<br>");
         document.write(account.withdraw(5000)+"원 인출 후 잔액은 " + account.inquiry());
     </script>
-    <h2>7 - C 예제 : </h2>
+    <h2>7 - C 예제 : 프로토타입 오버라이드</h2>
     <hr>
+    <script>
+        function Student(name, kor, math, eng) {
+            this.name = name;
+            this.kor = kor;
+            this.math = math;
+            this.eng = eng;
+        }
+        Student.prototype.getAvg = function () {
+            return (this.kor + this.math + this.eng)/3;
+        }
+        Student.prototype.printInfo = function () {
+            return this.name + " | " + this.getAvg().toFixed(2);
+        }
+
+        var students = [];
+        students.push(new Student('나하늘', 89, 99, 95));
+        students.push(new Student('신구름', 79, 94, 89));
+        students.push(new Student('최고야', 39, 99, 85));
+        students.push(new Student('장난이', 29, 80, 92));
+        students.push(new Student('이바다', 59, 88, 100));
+
+        students[2].sci = 92;
+        students[2].getAvg = function () {
+            return (this.kor + this.math + this.eng + this.sci)/4
+        };
+        for(let i in students) {
+            document.write(students[i].printInfo() + "<br>");
+        }
+    </script>
 </html>
