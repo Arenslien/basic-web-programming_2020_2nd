@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>20201112_2.html</title>
+    </head>
+    <body>
+        <h2>문서 제목 1</h2>
+        <h2 id="heading2">문서 제목 2</h2>
+        <h2 id="heading3">문서 제목 3</h2>
+        <script>
+            var heading2 = document.getElementById("heading2");
+            alert("heading.textContent 값: " + heading2.textContent);
+
+            heading2.textContent = "New Document Title";
+
+            var heading3 = document.getElementById("heading3");
+
+            heading3.onclick = function () {
+                heading3.innerHTML = "<i>New Documente Title3</i>";
+                heading3.style.backgroundColor = "yellow";
+                heading3.style.color = "blue";
+                heading3.style.border = "2px solid green";
+            }
+        </script>
+    </body>
+</html>

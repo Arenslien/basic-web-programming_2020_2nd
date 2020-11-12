@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>12주차 출석과제</title>
+        <style>
+            p#p_82 {
+                color: blue;
+            }
+            span#span_82 {
+                color: red;
+            }
+            p#p_83 {
+                color: blue;
+            }
+            span#span_83 {
+                color: red;
+            }
+        </style>
+        <script>
+            function example82() {
+                var span = document.getElementById("span_82");
+                span.style.color = "green";
+                span.style.fontSize = "30px";
+                span.style.display = "block";
+                span.style.width = "6em";
+                span.style.border = "3px dotted magenta";
+                span.style.margin = "20px;"
+            }
+
+            function example83() {
+                var p = document.getElementById("p_83");
+                p.innerHTML = "나의 <img src='./picture/dog.jpg' width='150px'> 강아지";
+            }
+
+            function example84(obj, size, color) {
+                obj.style.color = color;
+                obj.style.fontSize = size;
+            }
+
+            function example86() {
+                var spans = document.getElementsByClassName("span_86");
+
+                for(let i=0; i<spans.length; i++) {
+                    spans[i].style.color = "orchid";
+                    spans[i].style.fontSize = "20px";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h3>예제 8-2: CSS 스타일 동적 변경</h3>
+        <hr>
+        <p id="p_82">
+            이것은 <span id="span_82">문장입니다.</span>
+        </p>
+        <input type="button" value="스타일 변경" onclick="example82()">
+
+        <h3>예제 8-3: innerHTML로 콘텐츠 동적 변경</h3>
+        <hr>
+        <p id="p_83" onclick="example83()">
+            여기를 <span id="span_83">클릭하세요</span>
+        </p>
+        <h3>예제 8-4: this 활용</h3>
+        <hr>
+        <button onclick="example84(this, '30px', 'red')">버튼 1</button>
+        <button onclick="example84(this, '40px', 'blue')">버튼 2</button>
+        <p onclick="example84(this, '50px', 'orange')">버튼과 문장을 클릭하면 버튼&문장의 크기와 색 변경</p>
+
+        <h3>예제 8-6: 여러 태그 스타일 동적 변경</h3>
+        <hr>
+        <button onclick="example86()">과일 찾기</button>
+        <p>
+            저는 빨간 <span class="span_86">사과</span>를 좋아해서 아침마다 한 개씩 먹고 있어요. 운동할 때는 중간 중간에 <span class="span_86">바나나</span>를 먹지요. 탄수화물 섭취가 빨라 힘이 납니다. 또한 달콤한 향기를 품은 <span class="span_86">체리</span>와 여름 냄새 물신 나는 <span class="span_86">자두</span>를 좋아합니다.
+        </p>
+        <h3>예제 8-9: HTML 문서 작성 연습 페이지 만들기</h3>
+        <hr>
+        <p>
+            아래에 HTML 문서를 작성하고 버튼을 클릭해 보세요. 새 윈도우에 HTML 문서가 출력됩니다.
+        </p>
+        <textarea id="srcText" rows="10" cols="50"></textarea>
+        <br>
+        <br>
+        <button onclick="showHTML()">HTML 문서 출력하기</button>
+        <script>
+            var win=null;
+            function showHTML() {
+                if(win == null || win.closed)
+                    win = window.open("", "outWin", "width=300, height=200");
+                
+                var textArea = document.getElementById("srcText");
+                win.document.open();
+                win.document.write(textArea.value);
+                win.document.close();
+            }
+        </script>
+
+        <h3>예제 8-10: HTML 태그의 동적 추가 및 삭제</h3>
+        <script>
+            function createDIV() {
+                var obj = document.getElementById("parent");
+                var newDIV = document.createElement("div");
+                newDIV.innerHTML = "새로 생성된 DIV입니다.";
+                newDIV.setAttribute("id", "myDiv");
+                newDIV.style.backgroundColor = "yellow";
+                newDIV.onclick = function() {
+                    var p = this.parentElement;
+                    p.removeChild(this);
+                };
+                obj.appendChild(newDIV);
+            }
+        </script>
+        <hr>
+        <p>
+            DOM 트리에 동적으로 객체를 삽입할 수 있습니다. createElement(), appendChild(), removeChild 메소드를 이용하여 새로운 객체를 생성, 삽입, 삭제하는 예제입니다.
+        </p>
+        <br>
+        <a href="javascript:createDIV()">DIV생성</a>
+        <p id="parent"></p>
+    </body>
+</html>

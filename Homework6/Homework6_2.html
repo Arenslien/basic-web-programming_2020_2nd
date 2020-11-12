@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>정성훈/60191686/기초웹프로그래밍 과제 6 - 라면을 끓이는 순서</title>
+        <script>
+
+            function insertOrder() {
+                var order = prompt("라면을 끓이는 순서를 입력하라");
+                var newLi = document.createElement("li");
+                newLi.innerHTML = order;
+                var ol = document.getElementsByTagName("ol");
+                ol[0].style.height = "auto";
+                ol[0].appendChild(newLi);
+            }
+        </script>
+        <style>
+            span {
+                color: blue;
+                visibility: hidden;
+            }
+            ol {
+                height: 30px;
+                background-color: yellowgreen;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h2>라면을 끓이는 순서</h2>
+        <hr>
+        <ol type='A' onclick="insertOrder()">
+        </ol>
+    </body>
+</html>

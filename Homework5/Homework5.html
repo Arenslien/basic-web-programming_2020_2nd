@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>정성훈/60191686/기초웹프로그래밍 과제 5</title>
+        <script>
+            function Book(title, author, price, stock) {
+                this.title = title;
+                this.author = author;
+                this.price = price;
+                this.stock = stock;
+            }
+            Book.prototype.toString = function () {
+                return `${this.title} / ${this.author}저 / ${this.price}원`;
+            }
+            Book.prototype.getStock = function () {
+                return this.stock;
+            }
+
+            var bookAry = [];
+            bookAry.push(new Book("Java Programming", "황기태, 김효수", 23000, 5));
+            bookAry.push(new Book("R인 액션", "ROBERT I. KABACOFF", 32000, 6));
+            bookAry.push(new Book("선형대수학 입문", "수학교재편찬위원회", 28000, 8));
+            bookAry.push(new Book("기초 통계학", "노경섭", 18000, 13));
+            bookAry.push(new Book("라플락스의 악마, 철학을 묻다", "최훈", 25000, 1));
+            bookAry.sort();
+        </script>
+    </head>
+    <body>
+        <h2>Book 정보(제목/저자/가격)</h2>
+        <hr>
+        <script>
+            for(let i in bookAry) {
+                document.write(bookAry[i].toString()+"<br>");
+            }
+        </script>
+        <hr>
+        <script>
+            var noBook = true;
+            var inputBookName = prompt("재고를 알려드립니다.\n책 제목을 입력하세요!", "");
+            if(inputBookName == null) {
+                document.write("재고입력을 취소하셨습니다.");
+            }
+            else {
+                for(let i in bookAry) {
+                    if(inputBookName == bookAry[i].title) {
+                        document.write(`${inputBookName}은(는) ${bookAry[i].getStock()}권 있습니다.`);
+                        noBook = false;
+                        break;
+                    }
+                }
+            }
+            if(noBook == true) {
+                document.write("해당 책이 없습니다.");
+            }
+        </script>
+    </body>
+</html>
