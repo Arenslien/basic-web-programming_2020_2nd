@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>14주차 과제</title>
+        <script src="./lib/jquery-3.5.1.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                //문서 객체 추가
+                let output = '';
+                for(let i=0; i<256; i++) {
+                    output += '<div></div>';
+                }
+                document.body.innerHTML += output;
+
+                //스타일 적용
+                $('div').css({
+                    height: 1,
+                    width: '100%',
+                    backgroundColor: function(i) {
+                        return 'rgb(' + i + ',' + i + ',' + '255)';
+                    }
+                });
+
+                // $('*').css('margin', 0);
+                $('hr').css({
+                    marginTop: 10,
+                    marginBottom: 10,
+                    border: 'none',
+                    height: 2,
+                    backgroundColor: 'black', 
+                });
+                $('hr').css('marginTop', 10);
+                $('hr').css('marginBottom', 10);
+
+                //실습 2 관련
+                document.body.innerHTML += '<h2>실습 2</h2><hr>';
+
+                let objAry = [
+                    {name: 'Google', link: 'http://google.com'},
+                    {name: 'Naver', link: 'http://naver.com'},
+                    {name: 'Daum', link: 'http://daum.net'},
+
+                ];
+                $.each(objAry, function (index, item) {
+                    document.body.innerHTML += `<a href="${item.link}"><h3>${item.name}</h3></a>`;
+                });
+
+                //실습 3 관련
+                document.body.innerHTML += '<h2>실습 3</h2><hr>';
+
+                let imgs = [
+                    "./picture/world1.jpg",
+                    "./picture/world2.jpg",
+                    "./picture/world3.jpg",
+                    "./picture/world4.jpg",
+                ];
+
+                for(let i=0; i<imgs.length; i++) {
+                    $('<img />').attr('src', imgs[i]).appendTo('body');
+                }
+
+                $('img').css('width', 250);
+                //함수를 2초마다 실행
+                setInterval(function () {
+                    $('img').first().appendTo('img:last');
+                }, 2000);
+
+                //실습 4 관련
+                document.body.innerHTML += '<h2>실습 4</h2><hr>';
+
+                document.body.innerHTML += '<div id="box"></div>';
+
+                $('#box').css({
+                    width: 200,
+                    height: 200,
+                    background: 'orange',
+                }).on({
+                    click: function () {
+                        $(this).css('background', 'red');
+                    },
+                    mouseenter: function () {
+                        $(this).css('background', 'blue');
+                    },
+                    mouseleave: function () {
+                        $(this).css('background', 'orange');
+                    }
+                });
+
+
+            });
+        </script>
+    </head>
+    <body>
+        <h2>실습 1</h2>
+        <hr>
+    </body>
+</html>
