@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            var today = new Date();
+            document.write("현재 시간:" + today.toLocaleString()+"<br>");
+            let array = [1, 2, 3, 4, 5];
+            for(let i=0; i<5; i++)
+                document.write(array[i]+"<br>");
+            let array2 = new Array(6, 7, 8, 9, 10);
+            for(let i=0; i<5; i++)
+                document.write(array2[i]+"<br>");
+            let array3 = new Array(10);
+            for(let i=0; i<array3.length; i++) {
+                array3[i] = Math.floor(Math.random()*10);
+                document.write(array3[i]+"<br>");
+            }
+            document.write("<br>")
+            for(let i in array3) {
+                document.write(array3[i] + "<br>");
+            }
+            document.write("<br>")
+            for(let i of array3) {
+                document.write(i + "<br>");
+            }
+            var object1 = {
+                name: 'Arenslien',
+                age: 21,
+                toString: function() {
+                    document.write(`name is ${this.name} and age is ${this.age}<br>`);
+                }
+            };
+            object1.toString();
+            function Object1(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            Object1.prototype.ofString = function () {
+                document.write(`name is ${this.name} and age is ${this.age}<br>`);
+            }
+            var object2 = new Object1('Illena', 3);
+            object2.ofString();
+            document.write(object2.name+"<br>");
+            document.write(object2.age+"<br>");
+            object2.ofString();
+        </script>
+    </body>
+</html>

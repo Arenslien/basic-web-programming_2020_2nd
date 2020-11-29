@@ -1,0 +1,47 @@
+/* base.css */
+
+hr.line {
+    border-color: black;
+    background-color: black;
+    height: 2px;
+    width: 1400px;
+}
+hr.line2 {
+    border: none;
+    background-color: black;
+    height: 1px;
+    width: 300px;
+}
+div#mainMenu {
+    display: block;
+    width: 1400px;
+    height: 460px;
+}
+div.pizzaBox {
+    display: inline-block;
+    width: 200px;
+    height: 440px;
+    margin: 10px;
+}
+img.pizza {
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+div.infoBox {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+    visibility: hidden;
+    vertical-align: top;
+}
+input[type="submit"] {
+    width: 300px;
+    height: 70px;
+    background-color: #22bd7c;
+    border: none;
+    font-size: 30px;
+    color: white;
+}

@@ -1,0 +1,40 @@
+<!-- 정성훈 60191686 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>퀴즈 2-1 정성훈/60191686</title>
+  <style>
+    body { font-size: 1.5em; }
+  </style>
+</head>
+
+<body>
+  <h3>입력한 숫자를 오름차순으로 정렬합니다. </h3>
+  <div>Input numbers: <span id="input"></span></div>
+  <div>Ordered numbers: <span id="ordered"></span></div>
+
+  <script>
+    // 적절한 코드를 채우시오. 
+    var input = prompt("여러 숫자를 한 줄에(빈칸 \" \"로 구분해서) 입력하세요.","").split(" ");
+    var inputSpan = document.getElementById("input");
+    var orderedSpan = document.getElementById("ordered");
+
+    var stringOfInputSpan = "<mark>";
+    for(let i of input) {
+      stringOfInputSpan += `${i} `;
+    }
+    inputSpan.innerHTML = stringOfInputSpan+"</mark>";
+
+    var stringOfOrderedSpan = "<mark>"
+    var orderedString = input.sort(function (left, right) {
+      return left - right;
+    });
+    for(let i of orderedString) {
+      stringOfOrderedSpan += i+" ";
+    }
+    orderedSpan.innerHTML = stringOfOrderedSpan+"</mark>";
+  </script>
+</body>
+</html>

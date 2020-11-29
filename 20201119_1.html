@@ -1,0 +1,88 @@
+<!-- 6장 보충 연습 -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>20201119_1.html</title>
+    </head>
+    <body>
+        <script>
+            document.write("<h2>var & let & const</h2><hr>");
+            var a = 0;
+            for(let i=0; i<10; i++) {
+                document.write(`i=${i}<br>`);
+            }
+            const b = 10;
+            document.write(`b=${b}<br>`);
+            // document.write(`i=${i}<br>`); let 변수라 안됨
+            var c = '0'
+            if(c == 0) {
+                document.write("c == 0<br>");
+            }
+            else {
+                document.write("c != 0<br>")
+            }
+            if(c === 0) {
+                document.write("c === 0<br>");
+            }
+            else {
+                document.write("c !== 0<br>");
+                document.write(typeof(c)+"<br>");
+            }
+            function declaredFunction() {
+                document.write("declared function!<br>");
+            }
+            var anonymousFunction = function () {
+                document.write("anonymous Function!<br>");
+            }
+            declaredFunction();
+            anonymousFunction();
+            var arrowFunction = (x, y) => {
+                document.write(`${x} => ${y}<br>`);
+            }
+            arrowFunction(1, 3);
+            setTimeout(function() {alert("3초지남");}, 3000);
+            // setInterval(function() {alert("4초");}, 4000);
+            function returnFunction() {
+                var function1 = () => {
+                    document.write("returned function<br>");
+                }
+                return function1;
+            }
+            var function2 = returnFunction();
+            function2();
+
+            //closure
+            var justAVar = "전역변수";
+            function whereAreYou() {
+                var justAVar = "일반지역변수";
+                function inner() {
+                    return justAVar;
+                }
+                return inner;
+            }
+            var innerFunction = whereAreYou();
+            var result = innerFunction();
+            document.write(result+"<br>"); // 전역변수 출력 예상 => 틀림 일반지역 변수가 출력된 그 범위 내에 있는 걸로 되나봄.
+            var count = 0;
+            function cnt() {
+                var count = 0;
+                function counter() {
+                    count = count + 1;
+                    return count;
+                }
+                return counter;
+            }
+            var doCount = cnt();
+            document.write(doCount()+"<br>");
+            document.write(doCount()+"<br>");
+            document.write(doCount()+"<br>");
+            document.write(`count = ${count}<br>`);
+            var doCount2 = cnt();
+            document.write(doCount2()+"<br>");
+            document.write(doCount2()+"<br>");
+            document.write(doCount2()+"<br>");
+            document.write(`count = ${count}<br>`);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,79 @@
+<!-- 정성훈 60191686 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>퀴즈 2-2 정성훈/60191686</title>
+  <style>   
+    table {  border-collapse: collapse;  }
+    th, td {  padding: 5px 20px;
+    	        border: 1px solid blue;
+              text-align: center;  }
+  </style>
+</head>
+
+<body>
+  <h3>책 재고 및 가격</h3>
+  <table>
+    <tr>
+        <th>제목</th>
+        <th>정가</th>
+        <th>재고</th> 
+        <th>판매</th> 
+        <th>입고</th>                 
+    </tr>
+    <tr>
+        <td id="title"></td>
+        <td id="price"></td>
+        <td id="stock"></td> 
+        <td><input type="button" value="판매" onclick="book.sell(1);"></td>
+        <td><input type="button" value="입고" onclick="book.warehousing(1);"></td>
+    </tr>
+  </table>
+
+  <script>
+    // 빈 곳에 적절한 코드를 채우시오. 
+    // book 객체 선언
+    let book = {
+        // property(title, price, stock)의 초기 값을 예시와 같이 설정하시오. 
+        title: "명품 웹프로그래밍",
+        price: 28000,
+        stock: 2,
+
+        // method(printInfo, sell, warehousing)을 정의한다. 
+        // printInfo() - 표의 셀(제목, 정가, 재고에 해당)에 
+        //               property 값(title, price, stock)을 출력한다.
+        //               출력할 셀의 id와 객체의 property 이름이 같음을 이용하시오. 
+        printInfo: function() {
+            for ( let p in this ) {
+                if ( p != "printInfo" && p != "sell" && p != "warehousing"){
+                  document.getElementById(p).innerHTML = this[p];
+
+                }
+            }
+        },
+
+        // sell() - "판매" 버튼 눌렀을 때 실행될 내용을 작성하시오. 
+        sell: function (count) {
+          if(this.stock < 1) {
+            alert(`${this.title}의 재고가 부족합니다!`);
+          }
+          else {            
+            alert(`${this.title}이 1권 팔렸습니다!`);
+            this.stock -= count;
+          }
+          this.printInfo();
+        },
+
+
+        // warehousing() - "입고" 버튼 눌렀을 때 실행될 내용을 작성하시오. 
+        warehousing: function (count) {
+          alert(`${this.title}이 1권 입고되었습니다!`);
+          this.stock += count;
+          this.printInfo();
+        }
+    };
+    book.printInfo();
+  </script>
+</body>
+</html>

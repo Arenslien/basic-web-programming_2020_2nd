@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <h2>Test</h2>
+        <hr>
+        <div id="test">
+            HELLO <span>WORLD!</span>
+        </div>
+        <div id="add">
+            새로운 객체 생성
+        </div>
+        <ul>
+            <li>기본 item</li>
+        </ul>
+        <button onclick="change()">Button</button>
+        <script>
+            function change() {
+                var spanTest = document.getElementsByTagName("span");
+                spanTest[0].style.color = "red";
+                spanTest[0].innerHTML = "world!";
+            }
+            function add() {
+                var ul = document.getElementsByTagName("ul")[0];
+                var newLi = document.createElement("li");
+                newLi.innerHTML = "New Element: li";
+                newLi.onclick = function () {
+                    var p = 
+                }
+                ul.appendChild(newLi);
+            }
+            var addDiv = document.getElementById("add");
+            addDiv.onclick = add(); 
+        </script>
+    </body>
+</html>

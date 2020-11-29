@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>20201127_1.html</title>
+        <script>
+            var p, p2;
+            function over() {
+                p.style.backgroundColor = "green";
+            }
+            function out() {
+                p.style.backgroundColor = "white";
+            }
+            function over2() {
+                p2.style.backgroundColor = "green";
+            }
+            function out2() {
+                p2.style.backgroundColor = "white";
+            }
+            function init() {
+                p = document.getElementById('p1');
+                p.onmouseover = over;
+                p.onmouseout = out;
+                p2 = document.getElementById("p2");
+                p2.addEventListener("mouseover", over2);
+                p2.addEventListener("mouseout", out2);
+                var p3 = document.getElementById("p3");
+                p3.onmouseover = function () {
+                    p3.style.backgroundColor = "blue";
+                }
+                p3.onmouseout = function () {
+                    p3.style.backgroundColor = "white";
+                }
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <h2>HTML 태그에 리스너 작성</h2>
+        <hr>
+        <p onmouseover="this.style.backgroundColor='orchid'" onmouseout="this.style.backgroundColor='white'">
+            마우스 올리면 orchid 색으로 변경
+        </p>
+        <p id="p1">
+            두번째 방법은 이벤트리스너 프로퍼티에 작성하는 것
+        </p>
+        <p id="p2">
+            세 번째 방법은 addEventListener() 메소드 활용
+        </p> 
+        <p id="p3">
+            익명함수로 바로 이벤트리스너 프로퍼티에 작성
+        </p>
+        <hr>
+        <p id="p4">
+            MOUSEOVER
+        </p>
+        <button onclick="f(event)">클릭</button>
+        <script>
+            function f(e) {
+                alert(e.type);
+            }
+            document.getElementById("p4").onmouseover = f;
+        </script>
+        <p id="p5">
+            []
+        </p>
+        <button onclick="f2(event)">클릭</button>
+        <script>
+            function f2(e) {
+                let p5 = document.getElementById("p5");
+                let text = `Type: ${e.type}\n` +
+                            `Target: ${e.target}\n` +
+                            `currentTarget: ${e.currentTarget}\n` +
+                            `defaultPrevent: ${e.defaultPrevented}\n`;
+                p5.innerHTML = text;
+            }
+        </script>
+        <hr>
+        <a href="www.google.com" onclick="return false">
+            작동 안됨
+        </a>
+        <a href="www.google.com" onclick="event.preventDefault()">
+            이것도 작동 안됨
+        </a>
+        <hr>
+        <a href="www.google.com" onclick="return query()">
+            이동?
+        </a>
+        <form>
+            <input type="checkbox">O(체크가능)
+            <input type="checkbox" onclick="noAction(event)">X(체크 불가능)
+        </form>
+        <script>
+            function query() {
+                let result = confirm("GO?");
+                return result;
+            }
+            function noAction(e) {
+                e.preventDefault();
+            }
+        </script>
+    </body>
+</html>

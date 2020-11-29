@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>20201127_2.html</title>
+        <script>
+            function createLi() {
+                var li = document.createElement("li");
+                li.style.backgroundColor = "green";
+                return li
+            }
+        </script>
+    </head>
+    <body>
+        <h2>이벤트 흐름 확인</h2>
+        <hr>
+        <button id="btn1" onclick="directory()">흐름 확인</button>
+        <ul id="ul1">
+        </ul>
+        <script>
+            var btn1 = document.getElementById('btn1');
+            var ul = document.getElementById("ul1");
+
+            function capture(e) {
+                var currentTarget = e.currentTarget;
+                var tagName = currentTarget.tagName;
+                let text = "capture 단계: " + tagName + " TAG " + e.type + " Event";
+                let newLi = createLi();
+                newLi.innerHTML = text;
+                ul.appendChild(newLi);
+            }
+
+            function bubble(e) {
+                var currentTarget = e.currentTarget;
+                var tagName = currentTarget.tagName;
+                let text = "bubble 단계: " + tagName + " TAG " + e.type + " Event";
+                let newLi = createLi();
+                newLi.innerHTML = text;
+                ul.appendChild(newLi);
+            }
+
+            function directory() {
+                btn1.addEventListener("click", capture, true);
+                btn1.addEventListener("click", bubble, false);
+            }
+
+            document.body.addEventListener("click", capture, true);
+            document.body.addEventListener("click", bubble, false);
+            btn1.addEventListener("click", capture, false);
+            btn1.addEventListener("click", bubble, false);
+        </script>
+        <hr>
+    </body>
+</html>

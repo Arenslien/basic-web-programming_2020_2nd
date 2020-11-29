@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>13주차 출석과제</title>
+        <style>
+            img#img2 {
+                border: wheat 10px ridge;
+            }
+        </style>
+        <script>
+            var files = [
+                "./picture/image1.jpg",
+                "./picture/image2.jpg",
+                "./picture/image3.jpg",
+                "./picture/image4.jpg",
+                "./picture/image5.jpg",
+                "./picture/image6.jpg",
+                "./picture/image7.jpg",
+                "./picture/image8.jpg",
+                "./picture/image9.jpg",
+                "./picture/image10.jpg",
+            ]
+            var imgs = [];
+            for(let i=0; i<files.length; i++) {
+                imgs[i] = new Image();
+                imgs[i].src = files[i];
+            }
+            var next = 1;
+            function change2(img) {
+                img.src = imgs[next].src;
+                next++;
+                next %= imgs.length;
+            }
+        </script>
+    </head>
+    <body>
+        <h3>예제 9-9: onclick 리스너로 계산기 만들기</h3>
+        <hr>
+        계산하고자 하는 수식을 만든 후 버튼을 클릭하세요
+        <form>
+            식
+            <input id="exp" type="text" value="">
+            <br>
+            값
+            <input id="result" type="text">
+            <br>
+            <input type="button" value="계산" onclick="cal()">
+        </form>
+        <script>
+            function cal() {
+                var result = eval(document.getElementById("exp").value)
+                document.getElementById("result").value = result;
+            }
+        </script>
+        <h3>예제 9-10: 마우스 관련 이벤트 리스너</h3>
+        <hr>
+        마우스 관련
+        <span id="span1">이벤트</span>가 발생합니다.
+        <script>
+            var width = 1;
+            var span1 = document.getElementById("span1");
+            span1.onmousedown = down;
+            span1.onmouseup = up;
+            span1.onmouseout = out;
+            span1.onmouseover = over;
+            span1.onwheel = wheel;
+
+            function down(e) {
+                var obj = e.currentTarget;
+                obj.style.fontStyle = "italic";
+            }
+            function up(e) {
+                var obj = e.currentTarget;
+                obj.style.fontStyle = "normal";
+            }
+            function out(e) {
+                var obj = e.currentTarget;
+                obj.style.borderColor = "violet";
+            }
+            function over(e) {
+                var obj = e.currentTarget;
+                obj.style.borderColor = "lightgray";
+            }
+            function wheel(e) {
+                var obj = e.currentTarget;
+                if (e.wheelDelta < 0) { //아래쪽으로 굴림
+                    width--;
+                    if (width < 0) {
+                        width = 0;
+                    }
+                } else {
+                    width++;
+                }
+                obj.style.borderStyle = "dotted";
+                obj.style.borderWidth = width + "px";
+            }
+        </script>
+        <h3>예제 9-14: onload시 이미지의 크기 출력</h3>
+        <hr>
+        <form>
+            <select id="select" onchange="change()">
+                <option value="./img/apple.png">사과</option>
+                <option value="./img/banana.jpg">바나나</option>
+                <option value="./img/mango.jpg">망고</option>
+            </select>
+            <span id="span2">이미지크기</span>
+        </form>
+        <img id="img1" src="./img/apple.png">
+        <script>
+            function change() {
+                var img = document.getElementById("img1");
+                var sel = document.getElementById("select");
+                img.onload = function () {
+                    var span1 = document.getElementById("span2");
+                    span1.innerHTML = img.width + " x " + img.height;
+                }
+                img.src = sel.options[sel.selectedIndex].value;
+            }
+        </script>
+        <h3>예제 9-15: new Image()로 이미지 로딩</h3>
+        <hr>
+        이미지를 클릭하면 다음 이미지를 보여줍니다.<br>
+        <img id="img2" src="./picture/image1.jpg" width="200px" height="200px" onclick="change2(this)">
+        <h3>예제 9-17: 선택된 라디오버튼 알아내기</h3>
+        <hr>
+        버튼을 클릭하면 선택된 라디오 버튼의 value를 출력합니다.
+        <form>
+            <input type="radio" name="city" value ="seoul" checked>서울
+            <input type="radio" name="city" value ="busan" checked>부산
+            <input type="radio" name="city" value ="chuncheon" checked>춘천
+            <input type="button" value="find checked" onclick="findChecked()">
+        </form>
+        <script>
+            function findChecked() {
+                let city_name = null;
+                var city = document.getElementsByName("city");
+                for(let i=0; i<city.length; i++) {
+                    if(city[i].checked == true) {
+                        city_name = city[i];
+                    }
+                }
+                if(city_name != null)
+                    alert(`${city_name.value}이 선택되었음.`);
+                else
+                    alert("선택된 것이 없음.");
+            }
+        </script>
+    </body>
+</html>
